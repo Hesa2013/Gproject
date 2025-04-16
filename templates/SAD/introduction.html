@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل وتصميم نظم</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SAD/style.css') }}">
+    <script src="{{ url_for('static', filename='SAD/script.js') }}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 140px:
+        background-color: #1e402f; /*اخضر دافي*/
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .logo:hover {
+        transform scale(1.05);
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+    )
+</style>
+<div class="logo">
+    <img src="{{ url_for('static', filename='SAD/logo.png') }}" alt="SAD logo">
+</div>
+</head>
+<body>
+    <header>
+        <h1>تحليل وتصميم نظم</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">الرئيسية</a></li>
+                    <li><a href="{{ url_for('study_plan') }}">الخطة الدراسية</a></li>
+                    <li><a href="{{ url_for('practical_project') }}">المشروع التطبيقي</a></li>
+                    <li><a href="{{ url_for('training') }}">التدريب </a></li>
+                    <li><a href="{{ url_for('faq') }}">الأسئلة الشائعة</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section>
+            <h2>مقدمة عن التخصص</h2>
+            <p class="intro-text">
+                يهدف هذا التخصص إلى تزويد الطالب بالمعارف والمهارات الأساسية التي تمكّنه من تحليل،
+                وتصميم، وبناء، وتشغيل نظم المعلومات لمساعدة المؤسسات على الأداء بشكل أكثر فعالية،
+                كما يهتم بإدارة قواعد البيانات، وحفظها، وتخزينها، وحمايتها، واسترجاعها عند الحاجة إليها،
+                بالإضافة إلى تمكين الطالب من فهم متطلبات الأعمال وتوفير الحلول المناسبة لها.
+            </p>
+
+            <article class="certifications">
+                <h3>أفضل الشهادات الاحترافية</h3>
+                <ul>
+                    <li>شهادة CBAP (Certified Business Analysis Professional)</li>
+                    <li>شهادة PMI-PBA (Professional in Business Analysis)</li>
+                </ul>
+            </article>
+        </section>
+    </div>
+     <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة لموقع The SAD Student Handbook</p>
+         <p> الدعم الفني : SADHandbook20@gmail.com</p>
+    </footer>
+</body>
+</html>

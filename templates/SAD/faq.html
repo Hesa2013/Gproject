@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SAD/style.css') }}">
+    <script src="{{ url_for('static', filename='SAD/script.js') }}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 140px:
+        background-color: #1e402f; /*اخضر دافي*/
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .logo:hover {
+        transform scale(1.05);
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+    )
+</style>
+<div class="logo">
+    <img src="{{ url_for('static', filename='SAD/logo.png') }}" alt="SAD logo">
+</div>
+</head>
+<body>
+    <header>
+        <h1>الأسئلة الشائعة</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">الرئيسية</a></li>
+                    <li><a href="{{ url_for('introduction') }}">تحليل وتصميم النظم</a></li>
+                    <li><a href="{{ url_for('study_plan') }}">الخطة الدراسية</a></li>
+                    <li><a href="{{ url_for('practical_project') }}">المشروع التطبيقي</a></li>
+                    <li><a href="{{ url_for('training') }}">التدريب </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section>
+            <h2>أهم الأسئلة حول التخصص</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">❔ ما هو تحليل وتصميم النظم؟ ⬇</button>
+                    <div class="faq-answer">تحليل وتصميم النظم هو عملية دراسة احتياجات المؤسسة أو المنظمة بهدف تطوير نظام معلوماتي يساعد في تحسين الأداء واتخاذ القرارات بكفاءة. يشمل التحليل جمع المعلومات، ودراسة العمليات الحالية، وتحديد المتطلبات، بينما يركز التصميم على إنشاء حلول تقنية تلبي تلك المتطلبات.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ ما هي المهارات التي يكتسبها الطالب في تخصص تحليل وتصميم النظم؟ ⬇</button>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>تحليل احتياجات الأعمال وتصميم حلول تقنية مناسبة.</li>
+                            <li>إدارة قواعد البيانات وحمايتها واسترجاع البيانات.</li>
+                            <li>البرمجة بلغة Python واستخدام SQL لمعالجة البيانات.</li>
+                            <li>استخدام Scrum في إدارة المشاريع البرمجية.</li>
+                            <li>تحسين كفاءة الأنظمة وتحليل البيانات لاتخاذ قرارات استراتيجية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ ما الفرق بين محلل النظم ومصمم النظم؟ ⬇</button>
+                    <div class="faq-answer">
+                        <ul>
+                            <li><strong>محلل النظم:</strong> يركز على دراسة احتياجات المستخدمين، وتحليل العمليات الحالية، وتحديد المتطلبات.</li>
+                            <li><strong>مصمم النظم:</strong> يترجم هذه المتطلبات إلى تصميم تقني يتضمن قواعد بيانات، وهياكل برمجية، وواجهات المستخدم.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ ما هي الشهادات المهنية التي يحصل عليها الطالب في هذا التخصص؟ ⬇</button>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>PCEP™ – برمجة بايثون للمبتدئين.</li>
+                            <li>SQL Certification Exam – إدارة ومعالجة قواعد البيانات.</li>
+                            <li>Disciplined Agile® Scrum Master (DASM) – إدارة المشاريع البرمجية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ كم مدة الدراسة للحصول على شهادة الدبلوم؟ ⬇</button>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>دبلوم متوسط: سنتان دراسيتان + 6 أشهر تدريب تطبيقي.</li>
+                            <li>دبلوم مشارك: سنة دراسية واحدة.</li>
+                            <li>شهادة تدريبية: فصل دراسي واحد.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ هل البرنامج معتمد وما هي الجهة التي تصدر الشهادة؟ ⬇</button>
+                    <div class="faq-answer">نعم، البرنامج مرخص من جهات رسمية وفق التصنيف السعودي الموحد للتخصصات. يحصل الطالب على شهادة دبلوم معترف بها تؤهله للعمل مباشرة في السوق.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ ما هي لغات البرمجة وأدوات التحليل التي يتم تدريسها؟ ⬇</button>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Python لتحليل البيانات والبرمجة.</li>
+                            <li>SQL لإدارة قواعد البيانات.</li>
+                            <li>UML لتصميم الأنظمة.</li>
+                            <li>أدوات Agile و Scrum لإدارة المشاريع التقنية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ هل يتضمن التخصص تدريبًا عمليًا؟ ⬇</button>
+                    <div class="faq-answer">نعم، يتضمن البرنامج 6 أشهر من التدريب التطبيقي في بيئات عمل حقيقية لمساعدة الطلاب على تطبيق المهارات المكتسبة في سوق العمل.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">❔ هل يمكن للطالب متابعة دراسته بعد الدبلوم في هذا المجال؟ ⬇</button>
+                    <div class="faq-answer">نعم، يمكن لخريجي الدبلوم إكمال دراستهم في الجامعات أو المعاهد العليا للحصول على درجة البكالوريوس في علوم الحاسب، هندسة البرمجيات، أو نظم المعلومات.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+<!-- زر للانتقال إلى صفحة أخرى -->
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="{{ url_for('final_page') }}" style="
+            background-color: #0369A1;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#024e7a'" onmouseout="this.style.backgroundColor='#0369A1'">
+            الانتقال إلى الصفحة الأخيرة
+        </a>
+    </div>
+    <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة لموقع The SAD Student Handbook</p>
+        <p> الدعم الفني : SADHandbook20@gmail.com</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشروع التطبيقي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <style>
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 140px:
+        background-color: #1e402f; /*اخضر دافي*/
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .logo:hover {
+        transform scale(1.05);
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+    )
+    </style>
+    <div class="logo">
+    <img src="{{ url_for('static', filename='SAD/logo.png') }}" alt="SAD logo">
+</div>
+</head>
+<style>
+ /* تنسيق عام للصفحات */
+
+        body {
+
+            font-family: 'Cairo', Arial, sans-serif;
+
+            background-color: #FFFFFF;
+
+            color: #2c3e50;
+
+            margin: 0;
+
+            padding: 0 0 20px;
+
+            direction: rtl;
+
+            text-align: right;
+
+            line-height: 1.6;
+
+            font-size: 16px;
+
+        }
+
+
+
+
+
+        header {
+
+            background-color: #2c3e50;
+
+            color: #FFFFFF !important;
+
+            padding: 3rem 0;
+
+            text-align: center;
+
+            font-size: 2.2rem;
+
+            font-weight: bold;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        header h1 {
+
+            color: #FFFFFF !important;
+
+            font-size: 3.5rem;
+
+            font-weight: 700;
+
+            margin: 0;
+
+            padding: 10px 0;
+
+        }
+
+
+
+
+
+        .container {
+
+            display: flex;
+
+            flex-direction: row;
+
+            gap: 2rem;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 1rem;
+
+            min-height: 70vh;
+
+            direction: rtl;
+
+        }
+
+        aside {
+
+            width: 280px;
+
+            background: #2c3e50;
+
+            padding: 1.5rem;
+
+            border-radius: 15px;
+
+            position: sticky;
+
+            top: 1rem;
+
+            height: fit-content;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        aside ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        aside ul li {
+
+            margin-bottom: 1rem;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        aside ul li a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 1.1rem;
+
+            padding: 0.8rem 1rem;
+
+            border-radius: 8px;
+
+            display: block;
+
+            background: rgba(255,255,255,0.1);
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        aside ul li a:hover,
+
+        aside ul li a.active {
+
+            background: #0369A1;
+
+            transform: translateX(-10px);
+
+        }
+
+
+
+        section {
+
+            flex: 1;
+
+            padding: 2rem;
+
+            background: #fff;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+
+        }
+
+
+
+        section h2 {
+
+            color: #0369A1;
+
+            font-size: 1.6rem;
+
+            margin-bottom: 1.5rem;
+
+            padding-bottom: 0.5rem;
+
+            border-bottom: 3px solid #0369A1;
+
+        }
+
+
+
+        .documentation-section {
+
+            margin-top: 2rem;
+
+        }
+
+
+
+        .documentation-section h3 {
+
+            color: #0369A1;
+
+            font-size: 1.4rem;
+
+            margin-bottom: 1rem;
+
+            border-bottom: 2px solid #0369A1;
+
+            padding-bottom: 0.5rem;
+
+        }
+
+
+
+        .doc-item {
+
+            border: 1px solid #eee;
+
+            border-radius: 10px;
+
+            margin-bottom: 1rem;
+
+            overflow: hidden;
+
+            background: #2c3e50;
+
+        }
+
+
+
+        .doc-button {
+
+            width: 100%;
+
+            padding: 1rem;
+
+            background: #2c3e50;
+
+            color: white;
+
+            border: none;
+
+            text-align: right;
+
+            cursor: pointer;
+
+            font-size: 1.1rem;
+
+            direction: rtl;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        .doc-button:hover {
+
+            background: #0369A1;
+
+        }
+
+
+
+        .doc-content {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+            padding: 0 1rem;
+
+            background: #f8f9fa;
+
+            border-radius: 0 0 8px 8px;
+
+        }
+
+
+
+        .doc-content.active {
+
+            max-height: 500px;
+
+            padding: 1rem;
+
+        }
+
+
+
+        footer {
+
+            background: #2c3e50;
+
+            color: #fff;
+
+            text-align: center;
+
+            padding: 1.5rem;
+
+            margin-top: 3rem;
+
+            position: relative;
+
+            width: 100%;
+
+        }
+
+
+
+        footer p {
+
+            margin: 0;
+
+        }
+
+
+
+        footer a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            margin: 0 1rem;
+
+            padding: 0.5rem 1rem;
+
+            border-radius: 5px;
+
+            transition: background 0.3s;
+
+        }
+
+
+
+        footer a:hover {
+
+            background: rgba(255,255,255,0.1);
+
+        }
+
+
+
+        button {
+
+            background: #0369A1;
+
+            color: #fff;
+
+            border: none;
+
+            padding: 0.8rem 1.5rem;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: all 0.3s;
+
+            font-size: 1rem;
+
+        }
+
+        button:hover {
+
+            background: #024e7a;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 3px 10px rgba(3,105,161,0.3);
+
+        }
+
+</style>
+<body>
+    <header>
+        <h1>المشروع التطبيقي</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">الرئيسية</a></li>
+                    <li><a href="{{ url_for('introduction') }}">تحليل وتصميم النظم</a></li>
+                    <li><a href="{{ url_for('study_plan') }}">الخطة الدراسية</a></li>
+                    <li><a href="{{ url_for('training') }}">التدريب </a></li>
+                    <li><a href="{{ url_for('faq') }}">الأسئلة الشائعة</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section>
+            <h2>المشروع التطبيقي</h2>
+            <p>
+                هو مشروع شامل يهدف إلى توظيف جميع المعارف والمهارات التي تم اكتسابها خلال المستوى الأول والثاني. يتيح هذا المشروع للطالب اختيار أي برنامج يرغب في عمله، مثل برنامج دليل سياحي، ثم البدء بتصميم واجهته وتحديد اسم مناسب له.
+            </p>
+            <p>
+                يهدف هذا المشروع إلى تطبيق المفاهيم المكتسبة عمليًا، مما يعزز من مهارات التحليل، التصميم، والبرمجة، ويؤهل الطالب لمشاريع أكثر تطورًا في المستقبل.
+            </p>
+
+            <div class="documentation-section">
+                <h3>📄 يتم إعداد التوثيق (Documentation)، والذي يتضمن العناصر التالية:</h3>
+
+                {% set docs = [
+                    ("المحتويات (Contents)", "فهرس يتضمن جميع أقسام التوثيق."),
+                    ("المقدمة (Introduction)", "شرح عام عن المشروع، أهميته، والهدف منه."),
+                    ("خطة المشروع (Project Plan)", "يتم إعدادها باستخدام برنامج متخصص مثل Microsoft Project أو غيره لتوضيح مراحل التنفيذ."),
+                    ("المخطط الانسيابي (Flowchart)", "تصور مرئي لتدفق العمليات داخل المشروع."),
+                    ("تصميم واجهة المستخدم (UI Design)", "يتم تصميم الواجهة باستخدام برنامج Figma لضمان تجربة استخدام متكاملة."),
+                    ("حالات الاستخدام (Use Case)", "تحليل وتوضيح سيناريوهات الاستخدام المختلفة للمشروع."),
+                    ("أكواد بايثون (Python Code)", "إرفاق جميع الأكواد البرمجية التي تم تطويرها في المشروع."),
+                    ("دليل المستخدم (User Guide)", "شرح لكيفية استخدام البرنامج والتفاعل معه."),
+                    ("الملخص (Abstract)", "وصف موجز للمشروع وأهدافه الرئيسية."),
+                    ("الخاتمة (Conclusion)", "استنتاجات حول المشروع والتحديات التي تم مواجهتها."),
+                    ("العمل المستقبلي (Future Work)", "مقترحات لتطوير المشروع وإمكانيات تحسينه في المستقبل.")
+                ] %}
+
+                {% for title, content in docs %}
+                <div class="doc-item">
+                    <button class="doc-button">
+                        {{ title }}
+                        <span class="icon">⬇</span>
+                    </button>
+                    <div class="doc-content">
+                        <p>{{ content }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <p style="margin-top: 2rem;">
+                    وبعد الانتهاء من كتابة جميع أقسام التوثيق (Documentation) وإدراج كافة التفاصيل المتعلقة بالمشروع، يتم تحويل الملف إلى صيغة PDF لضمان تنسيقه وحفظه بشكل منظم وسهل القراءة.
+                </p>
+            </div>
+        </section>
+    </div>
+ <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة لموقع The SAD Student Handbook</p>
+     <p> الدعم الفني : SADHandbook20@gmail.com</p>
+    </footer>
+</body>
+</html>

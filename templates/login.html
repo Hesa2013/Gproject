@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+       <link rel="stylesheet" href="/static/style.css">
+    <style>
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 140px:
+        background-color: #1e402f; /*اخضر دافي*/
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .logo:hover {
+        transform scale(1.05);
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+    )
+    </style>
+    <div class="logo">
+    <img src="{{ url_for('static', filename='SAD/logo.png') }}" alt="SAD logo">
+</div>
+</head>
+<style>
+        body {
+            background-color: #2c3e50; /* لون الخلفية الموحد */
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+           .form-container {
+            max-width: 350px;
+            width: 90%;
+            padding: 25px;
+            background-color: #FFFFFF;
+            color: #2c3e50;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+
+        input {
+            display: block;
+            width: 85%;
+            padding: 10px;
+            margin: 0 auto 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+       }
+
+        input:focus {
+            border-color: #0369A1;
+            box-shadow: 0 0 8px rgba(3, 105, 161, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: #023954;
+            color: #FFFFFF;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 85%;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #012a42;
+        }
+
+        a {
+            color: #0369A1;
+            text-decoration: none;
+            display: block;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* إخفاء النموذج غير النشط */
+        .hidden {
+            display: none;
+        }
+    </style>
+<body>
+     <main class="form-container">
+        <!-- نموذج تسجيل الدخول -->
+        <div id="login-form">
+            <h1>Login</h1>
+            <form action="{{ url_for('login') }}" method="post">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <!--رابط ليتم توجيه المستخدم الى صفحة انشاء الحساب -->
+                <a href="{{ url_for('create_account') }}">Don't have an account? Create a new one</a>
+
+                <button type="submit">login</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

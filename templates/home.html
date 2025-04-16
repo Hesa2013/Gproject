@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الأقسام</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+       <style>
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 140px:
+        background-color: #1e402f; /*اخضر دافي*/
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .logo:hover {
+        transform scale(1.05);
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+    )
+</style>
+<div class="logo">
+    <img src="{{ url_for('static', filename='SAD/logo.png') }}" alt="SAD logo">
+</div>
+</head>
+<style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#FFFFFF;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .The-SAD-Student-Handbook{
+            background-color: #2c3e50;
+            color: white;
+            box-shadow: 0px 5px 20px rgba(0, 0, 139, 0.5);
+            padding: 90px;
+            font-size: 2.0rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 200px;
+        }
+
+        .intro-text{
+    color: black;
+    font-size: 1.4rem;
+    width: 95%;
+    font-weight: normal;
+    text-shadow: 0px 5px 20px rgba(0, 0, 139, 0.5);
+    text-align: right;
+    line-height: 1.8rem;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    decoration: rtl;
+}
+
+        /* إعدادات قائمة الأقسام */
+
+        .section-list {
+
+            background-color: #2c3e50;
+            border-radius: 700px;
+            display: black;
+            box-shadow: 0px 5px 20px rgba(0, 0, 139, 0.5);
+            black-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 150px;
+            max-width: 1000px;
+            margin: auto;
+            margin-bottom: 100px;
+        }
+
+        /* إعدادات كرت القسم */
+        .section-card {
+            background-color:#0369A1;
+            color: white;
+            padding: 25px;
+            border-radius: 80px;
+            box-shadow: 0px 4px 8px rgba(212, 175, 55, 0.6);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 100px;
+        }
+
+        .section-card:hover {
+            transform: scale(1.05);
+        }
+
+        .section-card h3 {
+            color:#FFFFFF;
+            font-size: 1.9rem;
+            margin: 10px 0;
+        }
+
+        .section-card p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: #bfbfbf;
+        }
+
+        .section-card img {
+            width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+    /* تنسيق زر التالي*/
+        .next-button {
+            background-color: #0369A1; /*لون ازرق*/
+            color: white; /*لون النص*/
+            border:none;
+            padding: 14px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px; /*شكل دائري ناعم*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0px 4px 8px rgba(212, 175, 55, 0.6);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        /*تأثير عند تمرير الماوس*/
+        .next-button:hover {
+            background-color: #ff3385; /*لون وردي غامق*/
+            box-shadow: 0 60px 20px rgba(255, 51, 133, 0.5);
+            transform: scale(1.1);
+    }
+
+    /*تحريك السهم عند تمرير الماوس*/
+        .next-button:hover:after {
+            transform: translateX(5px); /*تحريك السهم لليمين*/
+        }
+
+        /*ناثير عند النقر*/
+      .next-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 3px 10px rgba(255, 51, 133, 0.4);
+        }
+         /* الفوتر - إعادة تصميم */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    width: 100%;
+}
+
+footer p { margin: 0; }
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+footer a:hover {
+    background: rgba(255,255,255,0.1);
+}
+</style>
+<body>
+    <!-- عنوان الصفحة -->
+    <h1 class="The-SAD-Student-Handbook">The SAD Student Handbook</h1>
+    <p class="intro-text">
+    يهدف موقعنا إلى توفير مساعدة شاملة للمستجدين في تخصص تحليل وتصميم النظم من خلال تقديم فكرة أولية وافية عن التخصص.
+    يتضمن الموقع شروحات مفصلة ومبنية على أسس علمية لجميع الأقسام المعنية بهذا المجال.
+    نأمل أن يساهم موقعنا في تعزيز فهم الزوار للتخصص وتوجيههم نحو خطواتهم المستقبلية.
+    شكراً لزيارة موقعنا، ونتمنى أن يكون مصدر فائدة لكم.
+    </p>
+    <main>
+        <section class="sections">
+            <h1 style="color:black;">الأقسام الأكاديمية</h1>
+            <div class="section-list">
+                <div class="section-card">
+                    <h3>التدريب</h3>
+                    <p>يهدف إلى تزويد الطلاب بالمهارات العملية من خلال التدريب الميداني في بيئات عمل حقيقية.</p>
+                </div>
+                <div class="section-card">
+                    <h3>مشروع تطبيقي</h3>
+                    <p>تطوير مشروع عملي يعكس مهارات الطالب في البرمجة وتحليل النظم ويكون بمثابة تجربة حقيقية لسوق العمل.</p>
+                </div>
+                <div class="section-card">
+                    <h3>تخصص تحليل وتصميم النظم</h3>
+                    <p>يركز على دراسة وتحليل الأنظمة التقنية وتصميم حلول برمجية تلبي احتياجات المستخدمين.</p>
+                </div>
+                <div class="section-card">
+                    <h3>خاتمة الموقع</h3>
+                    <p>تظمن رابطنا للتواصل الاجتماعي مع رسالة ختاميه تفيد الطلاب المستجدين.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- زر التالي -->
+    <a href="{{ url_for('login') }}" class="next-button">Next</a>
+ <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة لموقع The SAD Student Handbook</p>
+     <p> الدعم الفني : SADHandbook20@gmail.com</p>
+    </footer>
+</body>
+</html>

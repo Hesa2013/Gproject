@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطة الدراسية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SAD/style.css') }}">
+    <script src="{{ url_for('static', filename='SAD/script.js') }}" defer></script>
+    <style>
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 140px:
+        background-color: #1e402f; /*اخضر دافي*/
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .logo:hover {
+        transform scale(1.05);
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+    )
+    </style>
+    <div class="logo">
+    <img src="{{ url_for('static', filename='SAD/logo.png') }}" alt="SAD logo">
+</div>
+</head>
+<body>
+    <header>
+        <h1>الخطة الدراسية</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+
+                    <li><a href="{{ url_for('home') }}">الرئيسية</a></li>
+                    <li><a href="{{ url_for('introduction') }}">تحليل وتصميم النظم</a></li>
+                    <li><a href="{{ url_for('practical_project') }}">المشروع التطبيقي</a></li>
+                    <li><a href="{{ url_for('training') }}">التدريب </a></li>
+                    <li><a href="{{ url_for('faq') }}">الأسئلة الشائعة</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+<section>
+    <h2>الخطة الدراسية حسب المستويات</h2>
+
+    <!-- المستوى الأول -->
+    <h3 style="color: #2c3e50; margin-top: 2rem;">المستوى الأول</h3>
+    <div class="tabs-container">
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab101')">
+                <span>ITSD101 - مقدمة في نظم المعلومات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab101">
+                <h3>وصف المقرر:</h3>
+                <p>مقدمة في مفهوم نظم المعلومات، مكوناتها، ودورها في بيئات العمل.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>تعريف نظم المعلومات وأنواعها.</li>
+                    <li>العلاقة بين النظم والمعلومات.</li>
+                    <li>تطبيقات على بيئات عمل حقيقية.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab102')">
+                <span>ITCP101 - أساسيات تقنية المعلومات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab102">
+                <h3>وصف المقرر:</h3>
+                <p>مقدمة شاملة في مفاهيم تقنية المعلومات، بما في ذلك مكونات الحاسوب، الشبكات، وأنظمة التشغيل.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مقدمة في أنظمة التشغيل (Windows, Linux).</li>
+                    <li>أساسيات الشبكات وتصميمها.</li>
+                    <li>إدارة قواعد البيانات البسيطة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab103')">
+                <span>AHEE102 - استماع ومحادثة</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab103">
+                <h3>وصف المقرر:</h3>
+                <p>تنمية مهارات الاستماع والتحدث باللغة الإنجليزية في سياقات أكاديمية ومهنية.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>الاستماع لمقاطع صوتية متنوعة.</li>
+                    <li>ممارسة المحادثة في مواقف واقعية.</li>
+                    <li>تحسين النطق والتعبير.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab104')">
+                <span>AHEE101 - قراءة وكتابة</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab104">
+                <h3>وصف المقرر:</h3>
+                <p>تطوير مهارات القراءة الأكاديمية والكتابة باللغة الإنجليزية.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>قراءة نصوص أكاديمية وتحليلها.</li>
+                    <li>كتابة مقالات وتقارير قصيرة.</li>
+                    <li>القواعد النحوية والهيكل التنظيمي للنصوص.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab105')">
+                <span>AHEC101 - اللغة الإنجليزية لعلوم الحاسب (1)</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab105">
+                <h3>وصف المقرر:</h3>
+                <p>مصطلحات إنجليزية أساسية في مجال علوم الحاسب، وتطبيقات لغوية مرتبطة بالتخصص.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مصطلحات برمجية وتقنية.</li>
+                    <li>قراءة نصوص تقنية وفهمها.</li>
+                    <li>تمارين على كتابة رسائل ومراسلات تقنية.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- المستوى الثاني -->
+    <h3 style="color: #2c3e50; margin-top: 2rem;">المستوى الثاني</h3>
+    <div class="tabs-container">
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab201')">
+                <span>ITSD106 - إدارة مشاريع أنظمة المعلومات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab201">
+                <h3>وصف المقرر:</h3>
+                <p>مبادئ وأساسيات إدارة المشاريع المتعلقة بأنظمة المعلومات، مع التركيز على الجداول الزمنية والميزانية والمخاطر.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مراحل دورة حياة المشروع.</li>
+                    <li>التخطيط والتنفيذ والمتابعة.</li>
+                    <li>إدارة المخاطر وضبط الجودة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab202')">
+                <span>ITSD105 - توثيق النظم</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab202">
+                <h3>وصف المقرر:</h3>
+                <p>طرق وأساليب توثيق أنظمة المعلومات، بما يشمل المتطلبات والعمليات والتصميم.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>أنواع التوثيق (وظيفي، تقني).</li>
+                    <li>التوثيق باستخدام النماذج الرسومية.</li>
+                    <li>أدوات التوثيق الحديثة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab203')">
+                <span>ITSD104 - تخطيط ومواصفات متطلبات النظام</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab203">
+                <h3>وصف المقرر:</h3>
+                <p>تحليل وتخطيط المتطلبات اللازمة لتطوير الأنظمة، وصياغة المواصفات بدقة واحترافية.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>جمع وتحليل المتطلبات.</li>
+                    <li>كتابة مواصفات المستخدم.</li>
+                    <li>نمذجة المتطلبات بالأدوات المناسبة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab204')">
+                <span>ITSD103 - تصميم قواعد البيانات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab204">
+                <h3>وصف المقرر:</h3>
+                <p>مفاهيم تصميم قواعد البيانات العلائقية باستخدام النمذجة العلائقية واستعلامات SQL.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>تصميم نماذج ERD.</li>
+                    <li>إنشاء قواعد بيانات باستخدام SQL.</li>
+                    <li>تطبيقات عملية على تصميم قواعد البيانات.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab205')">
+                <span>ITSD102 - مقدمة في البرمجة</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab205">
+                <h3>وصف المقرر:</h3>
+                <p>المفاهيم الأساسية في البرمجة باستخدام لغة برمجية مثل Python أو Java.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>المتغيرات وأنواع البيانات.</li>
+                    <li>الجمل الشرطية والحلقات.</li>
+                    <li>الوظائف والمصفوفات.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab206')">
+                <span>AHEE103 - مهارات التواصل باللغة الإنجليزية</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab206">
+                <h3>وصف المقرر:</h3>
+                <p>تعزيز مهارات التواصل الفعّال باللغة الإنجليزية في السياقات الأكاديمية والمهنية.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>تقديم العروض الشفوية.</li>
+                    <li>كتابة الرسائل المهنية.</li>
+                    <li>التواصل الفعال في الفرق والمشاريع.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab207')">
+                <span>AHEC102 - اللغة الإنجليزية لعلوم الحاسب (2)</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab207">
+                <h3>وصف المقرر:</h3>
+                <p>استكمال لمقرر اللغة الإنجليزية لعلوم الحاسب، مع التركيز على القراءة التقنية المتقدمة وكتابة المستندات الفنية.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>قراءة وتحليل الوثائق التقنية.</li>
+                    <li>كتابة تقارير تقنية مفصلة.</li>
+                    <li>مصطلحات متقدمة في البرمجة والشبكات.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- المستوى الثالث -->
+    <h3 style="color: #2c3e50; margin-top: 2rem;">المستوى الثالث</h3>
+    <div class="tabs-container">
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab301')">
+                <span>ITSD206 - أمن نظم المعلومات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab301">
+                <h3>وصف المقرر:</h3>
+                <p>مقدمة في أمن المعلومات، المخاطر، وأنظمة الحماية.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مفاهيم التشفير والجدران النارية.</li>
+                    <li>التعامل مع الهجمات السيبرانية.</li>
+                    <li>أمن الشبكات والبيانات الحساسة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab302')">
+                <span>ITSD205 - تصميم واجهة وتجربة المستخدم</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab302">
+                <h3>وصف المقرر:</h3>
+                <p>تصميم واجهات المستخدم وتجربة الاستخدام بشكل يحقق سهولة الاستخدام ورضا المستخدم.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مبادئ التصميم التفاعلي.</li>
+                    <li>تحليل سلوك المستخدم.</li>
+                    <li>استخدام أدوات التصميم مثل Figma أو Adobe XD.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab303')">
+                <span>ITSD204 - عملية تطوير البرمجيات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab303">
+                <h3>وصف المقرر:</h3>
+                <p>مبادئ دورة حياة تطوير البرمجيات، من التحليل إلى التنفيذ والصيانة.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مراحل تطوير البرمجيات (Agile, Waterfall).</li>
+                    <li>إدارة المشاريع باستخدام Jira.</li>
+                    <li>ضمان جودة البرمجيات.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab304')">
+                <span>ITSD203 - مشروع تطبيقي</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab304">
+                <h3>وصف المقرر:</h3>
+                <p>تنفيذ مشروع عملي ضمن فريق لتطبيق المهارات المكتسبة في التحليل والتصميم والبرمجة.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>تحديد فكرة المشروع.</li>
+                    <li>توزيع الأدوار والعمل الجماعي.</li>
+                    <li>تقديم التقرير النهائي والعرض التقديمي.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab305')">
+                <span>ITSD202 - تصميم قواعد البيانات المتقدمة</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab305">
+                <h3>وصف المقرر:</h3>
+                <p>مفاهيم متقدمة في تصميم وإدارة قواعد البيانات المعقدة.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>تصميم قواعد البيانات الموزعة.</li>
+                    <li>الفهارس، الإجراءات المخزنة، والمشغلات.</li>
+                    <li>تحسين الأداء واسترجاع البيانات.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab306')">
+                <span>ITSD201 - برمجة كائنية التوجه - 1</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab306">
+                <h3>وصف المقرر:</h3>
+                <p>المفاهيم الأساسية للبرمجة الكائنية، بما في ذلك الفئات، الكائنات، والتوريث.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>التغليف والوراثة وتعدد الأشكال.</li>
+                    <li>تطبيقات عملية باستخدام Java.</li>
+                    <li>تصميم الأنظمة باستخدام UML.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- المستوى الرابع -->
+    <h3 style="color: #2c3e50; margin-top: 2rem;">المستوى الرابع</h3>
+    <div class="tabs-container">
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab401')">
+                <span>ITSD212 - ذكاء الأعمال</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab401">
+                <h3>وصف المقرر:</h3>
+                <p>مقدمة في مفاهيم وتقنيات ذكاء الأعمال، وتحليل البيانات لدعم اتخاذ القرار.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>أدوات تحليل البيانات.</li>
+                    <li>تصميم لوحات المعلومات.</li>
+                    <li>مفاهيم ETL ومستودعات البيانات.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab402')">
+                <span>ITSD211 - اختبار وصيانة النظام</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab402">
+                <h3>وصف المقرر:</h3>
+                <p>أساليب واختبارات لضمان جودة الأنظمة البرمجية وصيانتها بعد التشغيل.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>اختبارات الوظائف والأداء.</li>
+                    <li>تحليل الأعطال وتصحيح الأخطاء.</li>
+                    <li>الصيانة التطويرية والتصحيحية.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab403')">
+                <span>ITSD210 - إدارة نظم قواعد البيانات</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab403">
+                <h3>وصف المقرر:</h3>
+                <p>الإدارة الشاملة لأنظمة قواعد البيانات، بما يشمل النسخ الاحتياطي، الاسترجاع، وضبط الأداء.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>إدارة المستخدمين والصلاحيات.</li>
+                    <li>المراقبة وتحسين الأداء.</li>
+                    <li>خطط النسخ والاستعادة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab404')">
+                <span>ITSD209 - مشروع التخرج</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab404">
+                <h3>وصف المقرر:</h3>
+                <p>تطبيق شامل لما تعلمه الطالب في مشروع عملي متكامل يُعرض أمام لجنة تقييم.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>تحديد مشكلة أو فكرة مشروع.</li>
+                    <li>تصميم وتطوير الحل البرمجي.</li>
+                    <li>تسليم الوثائق والعرض التقديمي النهائي.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab405')">
+                <span>ITSD208 - أساسيات المنهجيات الرشيقة</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab405">
+                <h3>وصف المقرر:</h3>
+                <p>مدخل إلى منهجيات تطوير البرمجيات الرشيقة (Agile) وتطبيقاتها في فرق العمل.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>مبادئ Agile وScrum.</li>
+                    <li>أدوار الفريق ومنهجية التطوير التكراري.</li>
+                    <li>التخطيط وإدارة التغيير في Agile.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <button class="tab-button" onclick="toggleTab('tab406')">
+                <span>ITSD207 - برمجة كائنية التوجه - 2</span>
+                <span class="icon">➡</span>
+            </button>
+            <div class="tab-content" id="tab406">
+                <h3>وصف المقرر:</h3>
+                <p>استكمال لمقرر برمجة كائنية التوجه - 1 مع التعمق في المفاهيم المتقدمة.</p>
+                <h3>المحتوى التفصيلي:</h3>
+                <ul>
+                    <li>الواجهات والتجريد.</li>
+                    <li>المجموعات، الملفات، والاستثناءات.</li>
+                    <li>مشاريع متقدمة باستخدام OOP.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+    </div>
+    <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة لموقع The SAD Student Handbook</p>
+        <p> الدعم الفني : SADHandbook20@gmail.com</p>
+    </footer>
+</body>
+</html>
